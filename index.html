@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albums</title>
+    <link rel="stylesheet" href="index.css">
+
+    <!-- jQuery einbinden -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+<h1>Albums <input id="search" type="text" placeholder="Search"/></h1>
+
+<div class="album">
+    <div class="image-wrapper">
+        <img class="cover-image" src="http://upload.wikimedia.org/wikipedia/en/3/39/WishYouWereHere-300.jpg"/>
+    </div>
+    <div class="text-wrapper">
+        <h2><b>Pink Floyd</b> Wish You Were Here</h2>
+        <ol>
+            <li>Shine On You Crazy Diamond (Parts I-V)</li>
+            <li>Welcome to the Machine</li>
+            <li>Have a Cigar</li>
+            <li>Wish You Were Here</li>
+            <li>Shine On You Crazy Diamond (Parts VI–IX)</li>
+        </ol>
+        <span class="label-info">1975 Harvest Records</span>
+    </div>
+</div>
+
+<div class="album">
+    <div class="image-wrapper">
+        <img class="cover-image" src="http://upload.wikimedia.org/wikipedia/en/3/39/WishYouWereHere-300.jpg"/>
+    </div>
+    <div class="text-wrapper">
+        <h2><b>Pink Floyd</b> Wish You Were Here</h2>
+        <ol>
+            <li>Shine On You Crazy Diamond (Parts I-V)</li>
+            <li>Welcome to the Machine</li>
+            <li>Have a Cigar</li>
+            <li>Wish You Were Here</li>
+            <li>Shine On You Crazy Diamond (Parts VI–IX)</li>
+        </ol>
+        <span class="label-info">1975 Harvest Records</span>
+    </div>
+</div>
+
+<!-- JavaScript richtig platzieren -->
+<script>
+$(document).ready(function() {
+
+    $("#search").keyup(function() {
+        var searchTerm = $(this).val().toLowerCase();
+
+        $(".album").each(function() {
+            if ($(this).text().toLowerCase().indexOf(searchTerm) === -1) {
+                $(this).hide();
+            } else {
+                $(this).show();
+            }
+        });
+    });
+
+});
+</script>
+
+</body>
+</html>
